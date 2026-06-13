@@ -1,0 +1,234 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 48px;
+  transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(4, 6, 15, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 48px;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logoLine {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.logoText {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--warm-white);
+}
+
+.logoSub {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+/* Links */
+.links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.25s;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+.link:hover {
+  color: var(--warm-white);
+}
+
+.linkUnderline {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.link:hover .linkUnderline {
+  width: 100%;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btnOutline {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-muted);
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.btnOutline:hover {
+  color: var(--warm-white);
+  border-color: var(--gold);
+}
+
+.btnFill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: var(--gold);
+  padding: 9px 22px;
+  border-radius: 40px;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btnFill:hover {
+  background: var(--gold-light);
+  transform: scale(1.03);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.burger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--warm-white);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+.burgerOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-secondary);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px 40px;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: center;
+}
+
+.mobileMenu ul li a {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--warm-white);
+  transition: color 0.25s;
+}
+
+.mobileMenu ul li a:hover {
+  color: var(--gold);
+}
+
+.mobileActions {
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .links, .actions .btnOutline {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .nav {
+    padding: 20px 24px;
+  }
+  .nav.scrolled {
+    padding: 14px 24px;
+  }
+}

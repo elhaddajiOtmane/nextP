@@ -1,0 +1,329 @@
+.section {
+  position: relative;
+  z-index: 10;
+  margin-top: -120px;
+  padding: 0 80px 80px;
+}
+
+.card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(245, 237, 216, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+}
+
+.tripType {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-faint);
+  border-radius: 30px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.tripBtn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 18px;
+  border-radius: 24px;
+  border: none;
+  background: transparent;
+  color: var(--warm-muted);
+  letter-spacing: 0.04em;
+  transition: background 0.25s, color 0.25s;
+}
+
+.tripBtnActive {
+  background: var(--gold);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.routeRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.routeRow > .fieldGroup {
+  flex: 1;
+}
+
+.detailsRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.detailsRow > .fieldGroup {
+  flex: 1;
+  min-width: 160px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-muted);
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  color: var(--warm-white);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 40px 14px 16px;
+  appearance: none;
+  transition: border-color 0.25s, background 0.25s;
+  cursor: none;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(200, 150, 62, 0.06);
+}
+
+.select option {
+  background: var(--bg-secondary);
+  color: var(--warm-white);
+}
+
+.selectArrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  color: var(--warm-white);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 16px;
+  transition: border-color 0.25s, background 0.25s;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(200, 150, 62, 0.06);
+}
+
+.input::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+/* Swap button */
+.swapBtn {
+  background: rgba(200, 150, 62, 0.12);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: flex-end;
+  transition: background 0.25s, border-color 0.25s;
+  margin-bottom: 0;
+}
+
+.swapBtn:hover {
+  background: rgba(200, 150, 62, 0.22);
+  border-color: var(--gold);
+}
+
+/* Passenger counter */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 48px;
+}
+
+.counterBtn {
+  width: 44px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.counterBtn:hover {
+  background: rgba(200, 150, 62, 0.12);
+}
+
+.counterVal {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--warm-white);
+}
+
+/* Search button */
+.searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--terracotta));
+  border: none;
+  border-radius: 14px;
+  color: var(--warm-white);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 18px;
+  transition: opacity 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 8px 32px rgba(200, 150, 62, 0.3);
+  margin-top: 4px;
+}
+
+.searchBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(200, 150, 62, 0.4);
+}
+
+/* Popular routes */
+.popularRoutes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-faint);
+  flex-wrap: wrap;
+}
+
+.popularLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-muted);
+  flex-shrink: 0;
+}
+
+.popularRoute {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--warm-faint);
+  border: 1px solid var(--border-faint);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--warm-muted);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.popularRoute:hover {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--warm-white);
+}
+
+.routeDuration {
+  font-size: 10px;
+  color: var(--gold);
+  font-weight: 600;
+  background: var(--gold-dim);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 16px 60px;
+    margin-top: -60px;
+  }
+  .card {
+    padding: 24px 20px;
+  }
+  .routeRow {
+    flex-direction: column;
+  }
+  .swapBtn {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+  .detailsRow {
+    flex-direction: column;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
